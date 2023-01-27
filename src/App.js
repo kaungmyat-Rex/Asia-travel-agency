@@ -15,13 +15,18 @@ import { RiTwitterFill } from "react-icons/ri";
 import { CgPlayTrackNextO } from "react-icons/cg";
 import { CgPlayTrackPrevO } from "react-icons/cg";
 import { CgScrollV } from "react-icons/cg";
+import { MdOutlineAirplaneTicket } from "react-icons/md";
+import { RiHotelLine } from "react-icons/ri";
+import { MdOutlineFastfood } from "react-icons/md";
+import { RiBus2Line } from "react-icons/ri";
+import { MdOutlinePersonPin } from "react-icons/md";
 
 function App() {
   const swiperRef = useRef(null);
   const [counter, setcounter] = useState(0);
   const [desti, setdesti] = useState("Indonesia   >>   Myanmar");
   const [trpackage, setTrpackage] = useState(
-    "Standard consectetur adipisicing elit Saepe repellendus, similique atque alias beatae enim. Iste a at optio corporis fuga minus culpa quisquam"
+    "A standard travel package typically includes several components to make planning and booking a trip easier and more convenient for travelers."
   );
   const [price, setPrice] = useState(1386);
   const [active, setActive] = useState("standard");
@@ -51,19 +56,19 @@ function App() {
     if (dataset.testName === "standard") {
       setdesti("Indonesia   >>   Myanmar");
       setTrpackage(
-        "Standard  consectetur adipisicing elit Saepe repellendus, similique atque alias beatae enim. Iste a at optio corporis fuga minus culpa quisquam"
+        "A standard travel package typically includes several components to make planning and booking a trip easier and more convenient for travelers."
       );
       setPrice(1386);
     } else if (dataset.testName === "deluxe") {
       setdesti("Indonesia   >>   Myanmar   >>   Singapore");
       setTrpackage(
-        "Deluxe  consectetur adipisicing elit Saepe repellendus, similique atque alias beatae enim. Iste a at optio corporis fuga minus culpa quisquam"
+        "A deluxe travel package is an upgraded version of a standard travel package and typically includes more luxurious and high-end components."
       );
       setPrice(2086);
     } else if (dataset.testName === "luxury") {
       setdesti("Indonesia   >>   Myanmar   >>   Singapore   >>   Thailand");
       setTrpackage(
-        "Luxury  consectetur adipisicing elit Saepe repellendus, similique atque alias beatae enim. Iste a at optio corporis fuga minus culpa quisquam"
+        "A luxury travel package is designed to provide the ultimate travel experience, with the highest level of comfort, exclusivity, and personalized service."
       );
       setPrice(2799);
     }
@@ -115,7 +120,7 @@ function App() {
                     slidesPerView={4}
                     spaceBetween={5}
                     centeredSlides={true}
-                    allowTouchMove={true}
+                    allowTouchMove={false}
                     modules={[Navigation]}
                     onBeforeInit={(swiper) => {
                       swiperRef.current = swiper;
@@ -245,6 +250,7 @@ function App() {
               >
                 <span style={{ fontSize: "23px" }}>03.</span> LUXURY
               </h1>
+              <CgScrollV className="scroll-icon-package" />
             </div>
             <div className="package-desc-div">
               <div className="package-desti-div">
@@ -276,7 +282,68 @@ function App() {
         </div>
         <h1 className="bg-text-package">Package</h1>
       </div>
-      <div style={{ width: "100vh", height: "100vh" }}></div>
+      {/*----------
+      -----------
+       about section started here
+        ------------
+      ----------- */}
+      <div className="about-section">
+        <div className="about-border">
+          <div className="about-main">
+            <div className="about-flight-first">
+              <h1 className="about-title-first">REASON TO</h1>
+              <h1 className="about-title-first">CHOOSE US</h1>
+            </div>
+
+            <div className="about-flight">
+              <MdOutlineAirplaneTicket className="flight-icon" />
+              <p className="about-flight-title">Flight</p>
+              <p className="about-flight-text">
+                We work with the best airlines and take care of flight booking,
+                Visa application and other travel documents.
+              </p>
+            </div>
+
+            <div className="about-flight">
+              <RiHotelLine className="flight-icon" />
+              <p className="about-flight-title">Accomodation</p>
+              <p className="about-flight-text">
+                We choose the best hotels to ensure great experiences while
+                visiting Switzerland. All hotels are rated either four or five
+                stars.
+              </p>
+            </div>
+
+            <div className="about-flight">
+              <MdOutlineFastfood className="flight-icon" />
+              <p className="about-flight-title">Food</p>
+              <p className="about-flight-text">
+                All meal plans are carefully selected so that customers will be
+                able to enjoy both local and international cuisines.
+              </p>
+            </div>
+
+            <div className="about-flight">
+              <RiBus2Line className="flight-icon" />
+              <p className="about-flight-title">Transportation</p>
+              <p className="about-flight-text">
+                Don’t worry about transportation when going from one place to
+                another. We will take care of everything.
+              </p>
+            </div>
+
+            <div className="about-flight">
+              <MdOutlinePersonPin className="flight-icon" />
+              <p className="about-flight-title">Tour Guide</p>
+              <p className="about-flight-text">
+                Our tour leaders or guide are experienced and professional to
+                provide the best service the entire trip.
+              </p>
+            </div>
+          </div>
+        </div>
+        <h1 className="bg-text-about">Why Us?</h1>
+      </div>
     </div>
   );
 }
