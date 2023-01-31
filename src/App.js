@@ -4,6 +4,7 @@ import myan from "../src/images/myan.jpg";
 import sing from "../src/images/sing.jpg";
 import thai from "../src/images/thai.jpg";
 import Nav from "../src/component/Nav";
+
 import { MdNavigateNext } from "react-icons/md";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
@@ -343,6 +344,45 @@ function App() {
           </div>
         </div>
         <h1 className="bg-text-about">Why Us?</h1>
+      </div>
+      {/*----------
+      -----------
+       contact section started here
+        ------------
+      ----------- */}
+      <div className="contact-section">
+        <div className="contact-border">
+          <div className="contact-main">
+            <div className="contact-info">
+              <h3 className="contact-address">ADDRESS</h3>
+              <p className="address">Yangon , Sanchaung , Ma gyi street</p>
+              <h3 className="contact-phone">PHONE</h3>
+              <p className="phone">09-23234456575 / 09-345657534</p>
+              <h3 className="contact-email">EMAIL</h3>
+              <p className="email">aungakm667@gmail.com</p>
+            </div>
+            <div className="contact-input">
+              <h1 className="input-title">Free Feel To Ask</h1>
+              <p className="input-name">Tell Us Your Name</p>
+              <input type="text" name="" id="" placeholder=" name" />
+              <p className="input-email">Your Email</p>
+              <input type="text" name="" id="" placeholder=" email" />
+              <p className="input-phone">Your Phone</p>
+              <input type="text" name="" id="" placeholder=" phone" />
+              <p className="input-comment">Your Comment</p>
+              <textarea
+                className="input-textarea"
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+                placeholder=" Comment"
+              ></textarea>
+              <p className="input-btn">Submit</p>
+            </div>
+          </div>
+        </div>
+        <h1 className="bg-text-contact">Contact</h1>
       </div>
     </div>
   );
