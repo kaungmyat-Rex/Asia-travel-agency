@@ -547,9 +547,6 @@
   padding: 10px 0px 10px 50px;
 }
 
-.package-text-div {
-}
-
 .package-text-large {
   font-size: 25px;
   color: rgb(185, 185, 185);
@@ -604,6 +601,9 @@
   font-size: 350px;
   opacity: 0.1;
   top: -330px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
   /* right: 90px; */
 }
 
@@ -707,6 +707,9 @@
   font-size: 350px;
   opacity: 0.1;
   top: -130px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 /* -------------
@@ -747,6 +750,7 @@
   display: flex;
   flex-direction: column;
   padding-right: 70px;
+  z-index: 1000;
 }
 
 .contact-info h3 {
@@ -829,8 +833,95 @@
   font-size: 350px;
   opacity: 0.1;
   bottom: -200px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 .input-btn:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+/* -------------
+ ----------------
+  ----------------
+ SearchModel style section start here
+ ------------
+  ----------------
+ ---------------- */
+
+.search-showHide {
+  display: none;
+}
+
+.searchModel-show {
+  display: block;
+}
+
+.search-section {
+  display: flex;
+  justify-content: center;
+
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 3000;
+  background: rgb(0, 0, 0, 0.8);
+  backdrop-filter: blur(2.5px);
+}
+
+.search-border {
+  width: 80%;
+}
+
+.search-main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 230px;
+}
+
+.searchmodel-input {
+  background-color: unset;
+  border: none;
+  border-bottom: 2px solid white;
+  width: 100%;
+
+  max-width: 1000px;
+  height: 40px;
+  color: white;
+  font-size: 30px;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 100;
+}
+.searchmodel-input::placeholder {
+  color: white;
+  font-size: 30px;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 100;
+  margin-bottom: 5px;
+}
+
+.searchmodel-input:focus {
+  outline: none;
+}
+
+.searchmodel-icon {
+  color: white;
+  font-size: 30px;
+  position: relative;
+  left: -30px;
+}
+
+.searchClose-icon {
+  color: white;
+  font-size: 30px;
+  position: relative;
+  top: -200px;
+  right: 52px;
+  cursor: pointer;
 }

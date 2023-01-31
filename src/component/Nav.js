@@ -2,7 +2,7 @@ import React from "react";
 import { HiPaperAirplane } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import { BsPersonCircle } from "react-icons/bs";
-const Nav = () => {
+const Nav = ({ searchModel, setSearchModel }) => {
   return (
     <div className="main-nav">
       <div className="nav-boder">
@@ -19,7 +19,10 @@ const Nav = () => {
             <p>Contact</p>
           </div>
           <div className="icon-list">
-            <BiSearch className="search-icons" />
+            <BiSearch
+              className="search-icons"
+              onClick={() => setSearchModel(true)}
+            />
 
             <BsPersonCircle className="login-icons" />
           </div>

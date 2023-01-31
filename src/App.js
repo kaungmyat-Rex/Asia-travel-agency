@@ -21,6 +21,7 @@ import { RiHotelLine } from "react-icons/ri";
 import { MdOutlineFastfood } from "react-icons/md";
 import { RiBus2Line } from "react-icons/ri";
 import { MdOutlinePersonPin } from "react-icons/md";
+import SearchModel from "./component/SearchModel";
 
 function App() {
   const swiperRef = useRef(null);
@@ -33,6 +34,7 @@ function App() {
   const [active, setActive] = useState("standard");
   const image = [indo, myan, sing, thai];
   const country = ["INDONESIA", "MYANMAR", "SINGAPORE", "THAILAND"];
+  const [searchModel, setSearchModel] = useState(false);
 
   const nextimageFun = () => {
     swiperRef.current?.slideNext();
@@ -84,8 +86,12 @@ function App() {
       ----------- */}
       <div className="div-bg-image">
         <img className="bg-image" src={image[counter]} alt="indo" />
+        <SearchModel
+          searchModel={searchModel}
+          setSearchModel={setSearchModel}
+        />
         <div className="section-landing">
-          <Nav />
+          <Nav searchModel={searchModel} setSearchModel={setSearchModel} />
           <div className="main-text-section">
             <div className="main-text-border">
               <div className="main-text">
@@ -260,7 +266,7 @@ function App() {
                   {desti}
                 </p>
               </div>
-              <div className="package-text-div">
+              <>
                 <p className="package-text-large">
                   {/* Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Dolorum, omnis pariatur. */}
@@ -272,7 +278,7 @@ function App() {
                   Flight Ticket & Visa Fees Included, Four-star Hotels and Inns,
                   All Meals, Free SIM Card(5GB Data + 150mins){" "}
                 </p>
-              </div>
+              </>
               <div className="package-price-div">
                 <p className="package-price">See Detail</p>
 
@@ -362,7 +368,7 @@ function App() {
               <p className="email">aungakm667@gmail.com</p>
             </div>
             <div className="contact-input">
-              <h1 className="input-title">Free Feel To Ask</h1>
+              <h1 className="input-title">Feel Free To Ask</h1>
               <p className="input-name">Tell Us Your Name</p>
               <input type="text" name="" id="" placeholder=" name" />
               <p className="input-email">Your Email</p>
