@@ -21,6 +21,7 @@ import { RiHotelLine } from "react-icons/ri";
 import { MdOutlineFastfood } from "react-icons/md";
 import { RiBus2Line } from "react-icons/ri";
 import { MdOutlinePersonPin } from "react-icons/md";
+
 import SearchModel from "./component/SearchModel";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
   const image = [indo, myan, sing, thai];
   const country = ["INDONESIA", "MYANMAR", "SINGAPORE", "THAILAND"];
   const [searchModel, setSearchModel] = useState(false);
+  const [openSidnav, setOpenSidenav] = useState(false);
 
   const nextimageFun = () => {
     swiperRef.current?.slideNext();
@@ -78,20 +80,26 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={`App ${openSidnav ? "app-fixed" : ""}`}>
       {/*----------
       -----------
        Home section started here
         ------------
       ----------- */}
-      <div className="div-bg-image">
+      <div className="div-bg-image" id="home">
         <img className="bg-image" src={image[counter]} alt="indo" />
         <SearchModel
           searchModel={searchModel}
           setSearchModel={setSearchModel}
         />
+
         <div className="section-landing">
-          <Nav searchModel={searchModel} setSearchModel={setSearchModel} />
+          <Nav
+            searchModel={searchModel}
+            setSearchModel={setSearchModel}
+            openSidnav={openSidnav}
+            setOpenSidenav={setOpenSidenav}
+          />
           <div className="main-text-section">
             <div className="main-text-border">
               <div className="main-text">
@@ -224,7 +232,7 @@ function App() {
        package section started here
         ------------
       ----------- */}
-      <div className="package-section">
+      <div className="package-section" id="package">
         <div className="package-border">
           <div className="package-main">
             <div className="package-type">
@@ -294,7 +302,7 @@ function App() {
        about section started here
         ------------
       ----------- */}
-      <div className="about-section">
+      <div className="about-section" id="about">
         <div className="about-border">
           <div className="about-main">
             <div className="about-flight-first">
@@ -356,7 +364,7 @@ function App() {
        contact section started here
         ------------
       ----------- */}
-      <div className="contact-section">
+      <div className="contact-section" id="contact">
         <div className="contact-border">
           <div className="contact-main">
             <div className="contact-info">
