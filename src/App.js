@@ -95,7 +95,6 @@ function App() {
 
         <div className="section-landing">
           <Nav
-            searchModel={searchModel}
             setSearchModel={setSearchModel}
             openSidnav={openSidnav}
             setOpenSidenav={setOpenSidenav}
@@ -269,17 +268,10 @@ function App() {
             </div>
             <div className="package-desc-div">
               <div className="package-desti-div">
-                <p className="package-desti-text">
-                  {/* Indonesia | Myanmar | Singapore | Thailand */}
-                  {desti}
-                </p>
+                <p className="package-desti-text">{desti}</p>
               </div>
               <>
-                <p className="package-text-large">
-                  {/* Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Dolorum, omnis pariatur. */}
-                  {trpackage}
-                </p>
+                <p className="package-text-large">{trpackage}</p>
                 <p className="package-text-tiny">
                   {" "}
                   This package includes : Visa Application, Flight Booking,

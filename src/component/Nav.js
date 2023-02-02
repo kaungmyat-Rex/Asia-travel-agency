@@ -2,7 +2,7 @@ import React from "react";
 import { HiPaperAirplane } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import { BsPersonCircle } from "react-icons/bs";
-import { GiHamburgerMenu } from "react-icons/gi";
+
 import { Squash as Hamburger } from "hamburger-react";
 import SideNav from "./SideNav";
 const Nav = ({ setSearchModel, openSidnav, setOpenSidenav }) => {
